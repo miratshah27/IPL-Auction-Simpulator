@@ -1,0 +1,53 @@
+div{
+    font-family: bahnschrift;
+}
+
+.background{
+    width: 250px;
+    height: 250px;
+    margin:5px 10px;
+    border-radius: 30px;
+    font-family: "bahnschrift";
+    color: #ffb600;
+    padding: 5px;
+    border: 3.5px groove white;
+}
+
+.top{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.basic{
+    margin-top:10px;
+    text-align: center;
+}
+
+.hr{
+    border: 0.5px solid rgb(180, 180, 180);
+    height: 0px;
+    background: rgb(134, 134, 134);
+    border-radius: 10px;
+}
+.mid{
+    text-align: center;
+    padding: 5px;
+}
+h6{
+    font-family: "bahnschrift";
+    margin: 2px;
+}
+.bottom{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+p{
+    font-family: "bahnschrift";
+    margin: 0px;
+    text-align: center;
+}
+.stats{
+    transform: scale(1.2);
+    text-align: center;
+}

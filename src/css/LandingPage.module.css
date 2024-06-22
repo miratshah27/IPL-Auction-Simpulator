@@ -1,0 +1,258 @@
+.background {
+  background: linear-gradient(
+    -45deg,
+    rgb(245, 38, 38),
+    rgb(4, 4, 167),
+    rgb(245, 38, 38),
+    rgb(4, 4, 167),
+    rgb(245, 38, 38)
+  );
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* background style ends */
+
+/* background card */
+
+.myCard {
+  width: 60%;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  
+}
+
+.c_checkbox {
+  display: none;
+  font-family: 'bahnschrift';
+}
+.c_checkbox:checked + .c_formContainer .c_form {
+  width: 37.5em;
+  font-family: 'bahnschrift';
+}
+
+@media screen and (max-width: 480px) {
+  .c_checkbox:checked + .c_formContainer .c_form {
+    width: 18em;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 600px) {
+  .c_checkbox:checked + .c_formContainer .c_form {
+    width: 25em;
+  }
+}
+
+.c_checkbox:checked + .c_formContainer .c_form__toggle {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.7);
+}
+.c_checkbox:checked + .c_formContainer .c_form__input,
+.c_checkbox:checked + .c_formContainer .c_form__buttonLabel {
+  transition: 0.2s 0.1s;
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+.c_checkbox:not(:checked)
+  + .c_formContainer
+  .c_form__input:required:valid
+  ~ .c_form__toggle::before,
+.c_checkbox:checked
+  + .c_formContainer
+  .c_form__input:required:valid
+  ~ .c_form__toggle::before {
+  content: "Verifying Token ...";
+}
+.c_checkbox:not(:checked)
+  + .c_formContainer
+  .c_form__input:required:valid
+  ~ .c_form__toggle {
+  pointer-events: none;
+  cursor: default;
+}
+
+.c_formContainer,
+.c_form,
+.c_form__toggle {
+  width: 20em;
+  height: 6.25em;
+}
+
+.c_formContainer {
+  position: relative;
+  font-weight: 700;
+}
+
+.c_form,
+.c_form__toggle {
+  position: absolute;
+  border-radius: 6.25em;
+  background-color: #ffffff;
+  transition: 0.2s;
+}
+
+.c_form {
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.625em;
+  box-sizing: border-box;
+  box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.c_form__toggle {
+  color: #ff7b73;
+  top: 0;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'bahnschrift';
+}
+.c_form__toggle::before {
+  font-size: 20px;
+  content: attr(data-title);
+  
+}
+
+.c_form__input,
+.c_form__button {
+  font: inherit;
+  border: 0;
+  outline: 0;
+  border-radius: 5em;
+  box-sizing: border-box;
+}
+
+.c_form__input,
+.c_form__buttonLabel {
+  font-size: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.7);
+  transition: 0s;
+}
+
+.c_form__input {
+  color: #ffcccc;
+  height: 100%;
+  width: 100%;
+  padding: 0 0.714em;
+}
+.c_form__input::placeholder {
+  color: currentColor;
+}
+.c_form__input:required:valid {
+  color: #ff7b73;
+}
+.c_form__input:required:valid + .c_form__buttonLabel {
+  color: #ffffff;
+}
+.c_form__input:required:valid + .c_form__buttonLabel::before {
+  pointer-events: initial;
+}
+
+.c_form__buttonLabel {
+  color: #ffaea9;
+  height: 100%;
+  width: auto;
+}
+.c_form__buttonLabel::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.c_form__button {
+  color: inherit;
+  padding: 0;
+  height: 100%;
+  width: 6.5em;
+  background-color: #ff7b73;
+}
+
+/* login form ends  */
+
+.lin_1 {
+  position: relative;
+  width: 24em;
+  margin: 20 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  color: wheat;
+  font-size: xx-large;
+}
+
+/* Animation */
+.anim_typewriter {
+    
+ position: relative;
+  width: 24em;
+  margin: 20 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  color: wheat;
+  font-size: xx-large;
+  font-family: 'bahnschrift';
+  animation: typewriter 2s steps(12) 1s 1 normal both,
+    blinkTextCursor 500ms steps(12) infinite normal;
+  font-weight: 900;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 7em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+* {
+  font-family: "Fira sans", sans-serif;
+  font-weight: 900;
+}
